@@ -1,7 +1,7 @@
 #include "LevelEditor.hpp"
 
 #include <iostream>
-#include <experimental/filesystem>
+#include <filesystem>
 
 #ifdef OS_WINDOWS
 #include <shellapi.h>
@@ -507,7 +507,7 @@ namespace rat {
 	}
 
 	void LevelEditor::loadConfig(const std::string& path) {
-		if (std::experimental::filesystem::exists(path)) {
+		if (std::filesystem::exists(path)) {
 			std::ifstream file{ path };
 			Json config;
 

@@ -81,7 +81,7 @@ public:
 	std::vector<std::unique_ptr<NodePin>> Inputs;
 	std::vector<std::unique_ptr<NodePin>> Outputs;
 
-	NodeType Type = Options;
+	NodeType Type = NodeType::Options;
 
 private:
 	int _lastPinId = 0;

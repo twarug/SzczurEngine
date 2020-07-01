@@ -1,3 +1,4 @@
+//#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 #include "Szczur/Application.hpp"
 
 
@@ -7,7 +8,7 @@ int main()
 	rat::Logger ratLogger;
 
 	LOG_INFO("Compiled with " COMPILER_NAME " on " OS_NAME " at " __DATE__ " " __TIME__ " as " MODE_NAME " mode");
-
+	
 	// Actual application code
 	rat::Application app;
 	return app.run();

@@ -1,7 +1,7 @@
 #include "MusicEditor.hpp"
 
 #include "Szczur/Modules/FileSystem/FileDialog.hpp"
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include <array>
 #include <string>
@@ -16,7 +16,7 @@ namespace rat
 	{
         nlohmann::json j;
 
-        auto currentPath = std::experimental::filesystem::current_path().string();
+        auto currentPath = std::filesystem::current_path().string();
         auto path = FileDialog::getOpenFileName("", currentPath, "JSON files (*.json)|*.json");
         std::string filePath;
         
@@ -62,7 +62,7 @@ namespace rat
 
     void PlaylistHolder::addMusic(const std::string& playlistName)
 	{
-        auto currentPath = std::experimental::filesystem::current_path().string();
+        auto currentPath = std::filesystem::current_path().string();
         auto path = FileDialog::getOpenFileName("", currentPath, "Music (*.flac)|*.flac");
         std::string filePath;
 

@@ -1,6 +1,6 @@
 #include "SpriteComponent.hpp"
 
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include "../Entity.hpp"
 #include "../Scene.hpp"
@@ -165,7 +165,7 @@ namespace rat {
 			if(getSpriteDisplayData()) {
 				ImGui::SameLine();
 				if(ImGui::Button("Change entity name")) {
-					getEntity()->setName(std::experimental::filesystem::path(getSpriteDisplayData()->getName()).stem().string());
+					getEntity()->setName(std::filesystem::path(getSpriteDisplayData()->getName()).stem().string());
 				}
 			}
 

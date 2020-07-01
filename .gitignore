@@ -13,5 +13,7 @@ settings.mk
 .vscode/
 *.npp
 
-# Other
-3rdParty/
+/.vs
+/src/.vs
+/lib/x64
+/bin/x64

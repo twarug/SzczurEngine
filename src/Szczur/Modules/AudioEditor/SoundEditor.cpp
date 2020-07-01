@@ -3,7 +3,7 @@
 #include <cmath>
 #include <fstream>
 
-#include <experimental/filesystem>
+#include <filesystem>
 #include "Szczur/Modules/FileSystem/FileDialog.hpp"
 
 #include <imgui.h>
@@ -248,7 +248,7 @@ namespace rat
 
     void SoundEditor::add()
     {
-        auto currentPath = std::experimental::filesystem::current_path().string();
+        auto currentPath = std::filesystem::current_path().string();
         auto path = FileDialog::getOpenFileName("", currentPath, "Sound files (*.flac)|*.flac");
         std::string filePath;
         

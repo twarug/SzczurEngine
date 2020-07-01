@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "src\vendor\lua\lua.vcxproj", "{0518A65F-F1CF-E7AC-5AD7-C00846AE829D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vendor", "src\vendor", "{AD8D58C4-C783-4145-864E-BDA0893ABB03}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dragonBones", "src\vendor\dragonBones\dragonBones.vcxproj", "{E2F4A8C3-3010-4BAE-9BBD-3456F8A8ECD6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Szczur", "src\Szczur.vcxproj", "{B4D49BC5-71B0-41CA-B28C-8F18369A2D7E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgui", "src\vendor\imgui\imgui.vcxproj", "{14753B1B-3F25-458B-A409-033ABED3A423}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgui-node-editor", "src\vendor\imgui-node-editor\imgui-node-editor.vcxproj", "{47082D54-DE0A-4969-819F-87D12AF6EA6F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glad", "src\vendor\glad\glad.vcxproj", "{90B12DB8-D382-48CE-824A-CF8E433839D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0518A65F-F1CF-E7AC-5AD7-C00846AE829D}.Debug|x64.ActiveCfg = Debug|x64
+		{0518A65F-F1CF-E7AC-5AD7-C00846AE829D}.Debug|x64.Build.0 = Debug|x64
+		{0518A65F-F1CF-E7AC-5AD7-C00846AE829D}.Release|x64.ActiveCfg = Release|x64
+		{0518A65F-F1CF-E7AC-5AD7-C00846AE829D}.Release|x64.Build.0 = Release|x64
+		{E2F4A8C3-3010-4BAE-9BBD-3456F8A8ECD6}.Debug|x64.ActiveCfg = Debug|x64
+		{E2F4A8C3-3010-4BAE-9BBD-3456F8A8ECD6}.Debug|x64.Build.0 = Debug|x64
+		{E2F4A8C3-3010-4BAE-9BBD-3456F8A8ECD6}.Release|x64.ActiveCfg = Release|x64
+		{E2F4A8C3-3010-4BAE-9BBD-3456F8A8ECD6}.Release|x64.Build.0 = Release|x64
+		{B4D49BC5-71B0-41CA-B28C-8F18369A2D7E}.Debug|x64.ActiveCfg = Debug|x64
+		{B4D49BC5-71B0-41CA-B28C-8F18369A2D7E}.Debug|x64.Build.0 = Debug|x64
+		{B4D49BC5-71B0-41CA-B28C-8F18369A2D7E}.Release|x64.ActiveCfg = Release|x64
+		{B4D49BC5-71B0-41CA-B28C-8F18369A2D7E}.Release|x64.Build.0 = Release|x64
+		{14753B1B-3F25-458B-A409-033ABED3A423}.Debug|x64.ActiveCfg = Debug|x64
+		{14753B1B-3F25-458B-A409-033ABED3A423}.Debug|x64.Build.0 = Debug|x64
+		{14753B1B-3F25-458B-A409-033ABED3A423}.Release|x64.ActiveCfg = Release|x64
+		{14753B1B-3F25-458B-A409-033ABED3A423}.Release|x64.Build.0 = Release|x64
+		{47082D54-DE0A-4969-819F-87D12AF6EA6F}.Debug|x64.ActiveCfg = Debug|x64
+		{47082D54-DE0A-4969-819F-87D12AF6EA6F}.Debug|x64.Build.0 = Debug|x64
+		{47082D54-DE0A-4969-819F-87D12AF6EA6F}.Release|x64.ActiveCfg = Release|x64
+		{47082D54-DE0A-4969-819F-87D12AF6EA6F}.Release|x64.Build.0 = Release|x64
+		{90B12DB8-D382-48CE-824A-CF8E433839D5}.Debug|x64.ActiveCfg = Debug|x64
+		{90B12DB8-D382-48CE-824A-CF8E433839D5}.Debug|x64.Build.0 = Debug|x64
+		{90B12DB8-D382-48CE-824A-CF8E433839D5}.Release|x64.ActiveCfg = Release|x64
+		{90B12DB8-D382-48CE-824A-CF8E433839D5}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0518A65F-F1CF-E7AC-5AD7-C00846AE829D} = {AD8D58C4-C783-4145-864E-BDA0893ABB03}
+		{E2F4A8C3-3010-4BAE-9BBD-3456F8A8ECD6} = {AD8D58C4-C783-4145-864E-BDA0893ABB03}
+		{14753B1B-3F25-458B-A409-033ABED3A423} = {AD8D58C4-C783-4145-864E-BDA0893ABB03}
+		{47082D54-DE0A-4969-819F-87D12AF6EA6F} = {AD8D58C4-C783-4145-864E-BDA0893ABB03}
+		{90B12DB8-D382-48CE-824A-CF8E433839D5} = {AD8D58C4-C783-4145-864E-BDA0893ABB03}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE4C8720-49D7-4804-A532-E90750C47FD1}
+	EndGlobalSection
+EndGlobal

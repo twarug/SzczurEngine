@@ -1,6 +1,6 @@
 #include "LevelEditor.hpp"
 
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include "Szczur/Modules/FileSystem/FileDialog.hpp"
 #include "Szczur/Modules/FileSystem/DirectoryDialog.hpp"
@@ -140,7 +140,7 @@ namespace rat {
 				}
 				
 				if (ImGui::MenuItem("Show in explorer")) {
-					std::string current = std::experimental::filesystem::current_path().string();
+					std::string current = std::filesystem::current_path().string();
 
 #ifdef OS_WINDOWS
 					ShellExecute(NULL, "open", current.c_str(), NULL, NULL, SW_SHOWDEFAULT);

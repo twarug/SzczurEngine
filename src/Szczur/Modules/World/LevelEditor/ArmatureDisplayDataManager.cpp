@@ -25,7 +25,7 @@ void ArmatureDisplayDataManager::render(bool& ifRender)
 		{
 			std::string directory = _scenes.getRelativePathFromExplorer("Select armature file", ".\\Assets");
 
-			auto path = std::experimental::filesystem::path(directory).parent_path().string();
+			auto path = std::filesystem::path(directory).parent_path().string();
 
 			auto armatureDisplayData = std::find_if(armatureDisplayDataHolder.begin(), armatureDisplayDataHolder.end(), [&] (auto& armature) { 
 				return armature->getFolderPath() == path;

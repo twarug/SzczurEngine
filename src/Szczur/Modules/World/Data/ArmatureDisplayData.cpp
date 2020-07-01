@@ -1,7 +1,7 @@
 #include "ArmatureDisplayData.hpp"
 
 #include <chrono>
-#include <experimental/filesystem>
+#include <filesystem>
  
 #include "Szczur/Modules/DragonBones/SF3DFactory.hpp"
 #include "Szczur/Utility/Logger.hpp"
@@ -16,7 +16,7 @@ namespace rat
 ArmatureDisplayData::ArmatureDisplayData(const std::string& path)
     : _folderPath(path)
 {
-	_name = std::experimental::filesystem::path(path).filename().string();
+	_name = std::filesystem::path(path).filename().string();
 
 	checkForReload();
 	load();
@@ -65,14 +65,24 @@ void ArmatureDisplayData::reload()
 	}
 }
 
+template <typename TP>
+std::time_t to_time_t(TP tp)
+{
+	using namespace std::chrono;
+	auto sctp = time_point_cast<system_clock::duration>(tp - TP::clock::now()
+		+ system_clock::now());
+	return system_clock::to_time_t(sctp);
+}
+
 void ArmatureDisplayData::checkForReload()
 {
-	namespace fs = std::experimental::filesystem;
+	namespace fs = std::filesystem;
 
 #ifndef PSYCHOX // Przepraszam :C 
-	auto lastSkeFileUpdate			= system_clock::to_time_t(fs::last_write_time(_folderPath + _skeFilePath));
-	auto lastTextureAtlasFileUpdate = system_clock::to_time_t(fs::last_write_time(_folderPath + _textureAtlasFilePath));
-	auto lastTextureFileUpdate		= system_clock::to_time_t(fs::last_write_time(_folderPath + _textureFilePath));
+	//auto tt = fs::last_write_time(_folderPath + _skeFilePath);
+	auto lastSkeFileUpdate			= to_time_t(fs::last_write_time(_folderPath + _skeFilePath));
+	auto lastTextureAtlasFileUpdate = to_time_t(fs::last_write_time(_folderPath + _textureAtlasFilePath));
+	auto lastTextureFileUpdate		= to_time_t(fs::last_write_time(_folderPath + _textureFilePath));
 	
 	if (lastSkeFileUpdate			!= _lastSkeFileUpdate ||
 		lastTextureAtlasFileUpdate	!= _lastTextureAtlasFileUpdate ||

@@ -191,7 +191,7 @@ namespace rat {
 
 				if (ImGui::Button("Open cotaining folder"))
 				{
-					std::experimental::filesystem::path path = mapWindows1250ToUtf8(getFilePath());
+					std::filesystem::path path = mapWindows1250ToUtf8(getFilePath());
 
 #ifdef OS_WINDOWS
 					ShellExecuteA(NULL, "open", path.parent_path().string().c_str(), NULL, NULL, SW_SHOWDEFAULT);

@@ -876,11 +876,11 @@ void NodeEditor::loadIcons()
 
 	LOG_INFO("Icons number: ", iconNumber);
 
-	for (int i = 0; i < iconNumber; i++)
+	for (unsigned i = 0; i < iconNumber; i++)
 	{
 		auto icon = std::make_unique<sf::Sprite>();
 		icon->setTexture(*_iconsTex);
-		icon->setTextureRect(sf::IntRect({ iconSize.x * i, 0 }, iconSize));
+		icon->setTextureRect(sf::IntRect(sf::Vector2i(iconSize.x * i, 0), iconSize));
 		icon->setScale(0.5f, 0.5f);
 
 		_icons.push_back(std::move(icon));

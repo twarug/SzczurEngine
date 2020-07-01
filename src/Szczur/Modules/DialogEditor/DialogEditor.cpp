@@ -1,6 +1,6 @@
 #include "DialogEditor.hpp"
 
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include "Szczur/Modules/FileSystem/DirectoryDialog.hpp"
 
@@ -10,7 +10,7 @@
 #include <shellapi.h> 
 #endif
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 namespace rat
 {

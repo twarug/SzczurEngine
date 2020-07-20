@@ -1,7 +1,7 @@
 #include "CharactersManager.hpp"
 
 #include <fstream>
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include <nlohmann/json.hpp>
 
@@ -47,7 +47,7 @@ namespace rat
 
                 ImGui::SameLine();
                 if (ImGui::Button("Load##Characters Manager")) {
-                    auto currentPath = std::experimental::filesystem::current_path().string();
+                    auto currentPath = std::filesystem::current_path().string();
                     auto path = FileDialog::getOpenFileName("", currentPath, "Images (*.png, *.jpg)|*.png;*.jpg");
                     if (path.find(currentPath) != std::string::npos) {
                         _characters[i].imagePath = path.substr(currentPath.length() + 1, path.length() - currentPath.length() - 1);

@@ -26,7 +26,7 @@ namespace sf {
 namespace sf3d {
 	class Event;
 	class Drawable;
-	class Vertex;
+	struct Vertex;
 	class VertexArray;
 }
 #include "Szczur/Utility/SFML3D/RenderWindow.hpp"

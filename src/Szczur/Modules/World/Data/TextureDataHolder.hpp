@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <memory>
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include <Szczur/Utility/SFML3D/Texture.hpp>
 
@@ -18,7 +18,7 @@ class TextureDataHolder
 		std::unique_ptr<SpriteDisplayData> data;
 		bool reloaded = false;
 #ifndef PSYCHOX
-		std::experimental::filesystem::file_time_type lastWriten;
+		std::filesystem::file_time_type lastWriten;
 #endif
 
 		///

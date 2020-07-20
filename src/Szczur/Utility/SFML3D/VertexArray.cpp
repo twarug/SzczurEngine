@@ -11,6 +11,8 @@
 #include "PrimitiveType.hpp"
 #include "Vertex.hpp"
 
+#include <algorithm>
+
 template <typename T, typename Class>
 constexpr const void* offsetPtrOf(T Class::*member)
 {
@@ -264,6 +266,7 @@ void VertexArray::resize(size_t size, const Vertex& value)
 void VertexArray::setVertex(size_t index, const Vertex& vertex)
 {
     _vertices[index] = vertex;
+
 
     _lowerIndex = std::min(_lowerIndex, index);
     _upperIndex = std::max(_upperIndex, index);

@@ -1,6 +1,6 @@
 #include "AnimatedSpriteComponent.hpp"
 
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include <nlohmann/json.hpp>
 
@@ -202,7 +202,7 @@ namespace rat {
 			if(getSpriteDisplayData()) {
 				ImGui::SameLine();
 				if(ImGui::Button("Change entity name")) {
-					getEntity()->setName(std::experimental::filesystem::path(getSpriteDisplayData()->getName()).stem().string());
+					getEntity()->setName(std::filesystem::path(getSpriteDisplayData()->getName()).stem().string());
 				}
 			}
 

@@ -1,6 +1,6 @@
 #include "ArmatureComponent.hpp"
 
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include <nlohmann/json.hpp>
 
@@ -496,7 +496,7 @@ void ArmatureComponent::renderHeader(ScenesManager& scenes, Entity* object)
 
 			if (!directory.empty())
 			{
-				setArmature(std::experimental::filesystem::path(directory).parent_path().filename().string());
+				setArmature(std::filesystem::path(directory).parent_path().filename().string());
 			}
 		}
 
@@ -506,7 +506,7 @@ void ArmatureComponent::renderHeader(ScenesManager& scenes, Entity* object)
 			ImGui::SameLine();
 			if (ImGui::Button("Change entity name"))
 			{
-				getEntity()->setName(std::experimental::filesystem::path(getArmatureDisplayData()->getName()).stem().string());
+				getEntity()->setName(std::filesystem::path(getArmatureDisplayData()->getName()).stem().string());
 			}
 		}
 

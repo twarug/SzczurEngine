@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{B4D49BC5-71B0-41CA-B28C-8F18369A2D7E}</ProjectGuid>
+    <RootNamespace>Szczur</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(ProjectDir)vendor\SFML\include;$(ProjectDir)vendor\boost;$(ProjectDir)vendor\lua\lua;$(ProjectDir)vendor\sol2\include;$(ProjectDir)vendor\rapidjson;$(ProjectDir)vendor\dragonBones;$(ProjectDir)vendor\json\include;$(ProjectDir)vendor\imgui;$(ProjectDir)vendor\imgui-node-editor\NodeEditor;$(ProjectDir)vendor\glad;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\OpenAL\include;$(ProjectDir)vendor\ffmpeg\include;$(ProjectDir)vendor\entt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <PreprocessorDefinitions>SFML_STATIC;_MBCS;BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <CppLanguageStandard>c++1y</CppLanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)vendor\SFML\lib;$(ProjectDir)vendor\ffmpeg\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-audio-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;jpeg.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;winmm.lib;gdi32.lib;openal32.lib;avcodec.lib;avdevice.lib;avfilter.lib;avformat.lib;avutil.lib;postproc.lib;swresample.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(ProjectDir)vendor\SFML\include;$(ProjectDir)vendor\boost;$(ProjectDir)vendor\lua\lua;$(ProjectDir)vendor\sol2\include;$(ProjectDir)vendor\rapidjson;$(ProjectDir)vendor\dragonBones;$(ProjectDir)vendor\json\include;$(ProjectDir)vendor\imgui;$(ProjectDir)vendor\imgui-node-editor\NodeEditor;$(ProjectDir)vendor\glad;$(ProjectDir)vendor\glm;$(ProjectDir)vendor\OpenAL\include;$(ProjectDir)vendor\ffmpeg\include;$(ProjectDir)vendor\entt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;_MBCS;BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>vendor\SFML\lib;vendor\ffmpeg\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-audio-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;jpeg.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;winmm.lib;gdi32.lib;openal32.lib;avcodec.lib;avdevice.lib;avfilter.lib;avformat.lib;avutil.lib;postproc.lib;swresample.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>-MP4 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Szczur\Application.cpp" />
+    <ClCompile Include="Szczur\ImGuiStyler.cpp" />
+    <ClCompile Include="Szczur\Modules\AudioEditor\AudioEditor.cpp" />
+    <ClCompile Include="Szczur\Modules\AudioEditor\MusicEditor.cpp" />
+    <ClCompile Include="Szczur\Modules\AudioEditor\SoundEditor.cpp" />
+    <ClCompile Include="Szczur\Modules\AudioEffects\AudioEffect.cpp" />
+    <ClCompile Include="Szczur\Modules\AudioEffects\AudioEffects.cpp" />
+    <ClCompile Include="Szczur\Modules\AudioEffects\Effect.cpp" />
+    <ClCompile Include="Szczur\Modules\AudioEffects\Effects\Echo.cpp" />
+    <ClCompile Include="Szczur\Modules\AudioEffects\Effects\EffectBase.cpp" />
+    <ClCompile Include="Szczur\Modules\AudioEffects\Effects\Equalizer.cpp" />
+    <ClCompile Include="Szczur\Modules\AudioEffects\Effects\Reverb.cpp" />
+    <ClCompile Include="Szczur\Modules\Cinematics\Cinematics.cpp" />
+    <ClCompile Include="Szczur\Modules\Cinematics\MovieSound.cpp" />
+    <ClCompile Include="Szczur\Modules\Cinematics\MovieText.cpp" />
+    <ClCompile Include="Szczur\Modules\Cinematics\VideoLoop.cpp" />
+    <ClCompile Include="Szczur\Modules\DialogEditor\CharactersManager\CharactersManager.cpp" />
+    <ClCompile Include="Szczur\Modules\DialogEditor\DialogEditor.cpp" />
+    <ClCompile Include="Szczur\Modules\DialogEditor\DLGEditor\DialogData.cpp" />
+    <ClCompile Include="Szczur\Modules\DialogEditor\DLGEditor\DLGEditor.cpp" />
+    <ClCompile Include="Szczur\Modules\DialogEditor\DLGEditor\DLGTextManager.cpp" />
+    <ClCompile Include="Szczur\Modules\DialogEditor\NodeEditor\NodeEditor.cpp" />
+    <ClCompile Include="Szczur\Modules\DialogEditor\NodeEditor\NodeManager.cpp" />
+    <ClCompile Include="Szczur\Modules\Dialog\Dialog.cpp" />
+    <ClCompile Include="Szczur\Modules\Dialog\DialogGUI.cpp" />
+    <ClCompile Include="Szczur\Modules\Dialog\DialogManager.cpp" />
+    <ClCompile Include="Szczur\Modules\Dialog\DialogSoundBase.cpp" />
+    <ClCompile Include="Szczur\Modules\Dialog\DialogSoundManager.cpp" />
+    <ClCompile Include="Szczur\Modules\Dialog\Options.cpp" />
+    <ClCompile Include="Szczur\Modules\Dialog\SoundManager.cpp" />
+    <ClCompile Include="Szczur\Modules\Dialog\TextManager.cpp" />
+    <ClCompile Include="Szczur\Modules\Dialog\TextStruct.cpp" />
+    <ClCompile Include="Szczur\Modules\DragonBones\DragonBones.cpp" />
+    <ClCompile Include="Szczur\Modules\DragonBones\SF3DArmatureDisplay.cpp" />
+    <ClCompile Include="Szczur\Modules\DragonBones\SF3DFactory.cpp" />
+    <ClCompile Include="Szczur\Modules\DragonBones\SF3DSlot.cpp" />
+    <ClCompile Include="Szczur\Modules\DragonBones\SF3DTextureAtlasData.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\AmuletSlot.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\ArmorSlots.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\Equipment.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\EquipmentObject.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\EquipmentSlot.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\ItemManager.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\ItemPreview.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\NormalSlots.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\ReplaceItem.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\RingSlider.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\UsableItem.cpp" />
+    <ClCompile Include="Szczur\Modules\Equipment\WearableItem.cpp" />
+    <ClCompile Include="Szczur\Modules\FileSystem\DirectoryDialog.cpp" />
+    <ClCompile Include="Szczur\Modules\FileSystem\DragDrop.cpp" />
+    <ClCompile Include="Szczur\Modules\FileSystem\FileDialog.cpp" />
+    <ClCompile Include="Szczur\Modules\GUITest\NinePatch.cpp" />
+    <ClCompile Include="Szczur\Modules\GUITest\Patch.cpp" />
+    <ClCompile Include="Szczur\Modules\GUITest\Scroller.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\Animation\Anim.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\Base\BaseBar.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\GUI.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\ImageWidget.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\InterfaceWidget.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\ListWidget.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\ScrollAreaWidget.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\TextAreaWidget.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\TextWidget.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\Utility\TextData.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\Widget.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\Widget\FamilyTransform.cpp" />
+    <ClCompile Include="Szczur\Modules\GUI\WindowWidget.cpp" />
+    <ClCompile Include="Szczur\Modules\Input\Input.cpp" />
+    <ClCompile Include="Szczur\Modules\Input\InputCode.cpp" />
+    <ClCompile Include="Szczur\Modules\Input\InputManager.cpp" />
+    <ClCompile Include="Szczur\Modules\Listener\Listener.cpp" />
+    <ClCompile Include="Szczur\Modules\Music\Music.cpp" />
+    <ClCompile Include="Szczur\Modules\Music\MusicAssets.cpp" />
+    <ClCompile Include="Szczur\Modules\Music\MusicBase.cpp" />
+    <ClCompile Include="Szczur\Modules\Music\Playlist.cpp" />
+    <ClCompile Include="Szczur\Modules\Music\RatMusic.cpp" />
+    <ClCompile Include="Szczur\Modules\Player\Player.cpp" />
+    <ClCompile Include="Szczur\Modules\Script\Script.cpp" />
+    <ClCompile Include="Szczur\Modules\Sound\Sound.cpp" />
+    <ClCompile Include="Szczur\Modules\Sound\SoundAssets.cpp" />
+    <ClCompile Include="Szczur\Modules\Sound\SoundBase.cpp" />
+    <ClCompile Include="Szczur\Modules\Window\Window.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Component.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\AnimatedSpriteComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\ArmatureComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\AudioComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\BaseComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\CameraComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\ColliderComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\InteractableComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\PointLightComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\ScriptableComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\SpriteComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\TraceComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\Trace\Timeline.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\Trace\Trace.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Components\TriggerComponent.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Data\ArmatureDisplayData.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Data\SpriteDisplayData.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Data\TextureDataHolder.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Entity.cpp" />
+    <ClCompile Include="Szczur\Modules\World\LevelEditor\ArmatureDisplayDataManager.cpp" />
+    <ClCompile Include="Szczur\Modules\World\LevelEditor\LevelEditor.cpp" />
+    <ClCompile Include="Szczur\Modules\World\LevelEditor\LevelEditor_MenuBar.cpp" />
+    <ClCompile Include="Szczur\Modules\World\LevelEditor\LevelEditor_Origins.cpp" />
+    <ClCompile Include="Szczur\Modules\World\LevelEditor\LevelEditor_Properties.cpp" />
+    <ClCompile Include="Szczur\Modules\World\LevelEditor\ObjectsList.cpp" />
+    <ClCompile Include="Szczur\Modules\World\LevelEditor\SpriteDisplayDataManager.cpp" />
+    <ClCompile Include="Szczur\Modules\World\Scene.cpp" />
+    <ClCompile Include="Szczur\Modules\World\ScenesManager.cpp" />
+    <ClCompile Include="Szczur\Modules\World\World.cpp" />
+    <ClCompile Include="Szczur\Utility\Container\AssetManager.cpp" />
+    <ClCompile Include="Szczur\Utility\Container\AssetTraits.cpp" />
+    <ClCompile Include="Szczur\Utility\Convert\Unicode.cpp" />
+    <ClCompile Include="Szczur\Utility\Convert\Windows1250.cpp" />
+    <ClCompile Include="Szczur\Utility\Logger.cpp" />
+    <ClCompile Include="Szczur\Utility\MsgBox.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\Camera.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\CircleShape.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\LightPoint.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\Linear.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\RectangleShape.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\RenderLayer.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\RenderStates.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\RenderTarget.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\RenderTexture.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\RenderWindow.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\Shader.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\ShaderProgram.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\Shape.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\SimpleSprite.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\Sprite.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\Texture.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\Transform.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\Transformable.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\Vertex.cpp" />
+    <ClCompile Include="Szczur\Utility\SFML3D\VertexArray.cpp" />
+    <ClCompile Include="Szczur\Utility\Tests.cpp" />
+    <ClCompile Include="Szczur\Utility\Time\Clock.cpp" />
+    <ClCompile Include="Szczur\Utility\Time\Time.cpp" />
+    <ClCompile Include="Szczur\Utility\Time\Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Szczur\Application.hpp" />
+    <ClInclude Include="Szczur\Config.hpp" />
+    <ClInclude Include="Szczur\ImGuiStyler.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEditor\AudioEditor.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEditor\MusicEditor.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEditor\SoundEditor.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEffects\AudioEffect.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEffects\AudioEffects.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEffects\Effect.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEffects\EffectsData.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEffects\Effects\Echo.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEffects\Effects\EffectBase.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEffects\Effects\Equalizer.hpp" />
+    <ClInclude Include="Szczur\Modules\AudioEffects\Effects\Reverb.hpp" />
+    <ClInclude Include="Szczur\Modules\Cinematics\Cinematics.hpp" />
+    <ClInclude Include="Szczur\Modules\Cinematics\MovieSound.hpp" />
+    <ClInclude Include="Szczur\Modules\Cinematics\MovieText.hpp" />
+    <ClInclude Include="Szczur\Modules\Cinematics\VideoLoop.hpp" />
+    <ClInclude Include="Szczur\Modules\DialogEditor\CharactersManager\CharacterData.hpp" />
+    <ClInclude Include="Szczur\Modules\DialogEditor\CharactersManager\CharactersManager.hpp" />
+    <ClInclude Include="Szczur\Modules\DialogEditor\DialogEditor.hpp" />
+    <ClInclude Include="Szczur\Modules\DialogEditor\DLGEditor\DialogData.hpp" />
+    <ClInclude Include="Szczur\Modules\DialogEditor\DLGEditor\DLGEditor.hpp" />
+    <ClInclude Include="Szczur\Modules\DialogEditor\DLGEditor\DLGTextManager.hpp" />
+    <ClInclude Include="Szczur\Modules\DialogEditor\NodeEditor\NodeEditor.hpp" />
+    <ClInclude Include="Szczur\Modules\DialogEditor\NodeEditor\NodeManager.hpp" />
+    <ClInclude Include="Szczur\Modules\Dialog\Dialog.hpp" />
+    <ClInclude Include="Szczur\Modules\Dialog\DialogGUI.hpp" />
+    <ClInclude Include="Szczur\Modules\Dialog\DialogManager.hpp" />
+    <ClInclude Include="Szczur\Modules\Dialog\DialogSoundBase.hpp" />
+    <ClInclude Include="Szczur\Modules\Dialog\DialogSoundManager.hpp" />
+    <ClInclude Include="Szczur\Modules\Dialog\Options.hpp" />
+    <ClInclude Include="Szczur\Modules\Dialog\SoundManager.hpp" />
+    <ClInclude Include="Szczur\Modules\Dialog\TextManager.hpp" />
+    <ClInclude Include="Szczur\Modules\Dialog\TextStruct.hpp" />
+    <ClInclude Include="Szczur\Modules\DragonBones\DragonBones.hpp" />
+    <ClInclude Include="Szczur\Modules\DragonBones\SF3DArmatureDisplay.hpp" />
+    <ClInclude Include="Szczur\Modules\DragonBones\SF3DDisplay.hpp" />
+    <ClInclude Include="Szczur\Modules\DragonBones\SF3DEventDispatcher.hpp" />
+    <ClInclude Include="Szczur\Modules\DragonBones\SF3DFactory.hpp" />
+    <ClInclude Include="Szczur\Modules\DragonBones\SF3DSlot.hpp" />
+    <ClInclude Include="Szczur\Modules\DragonBones\SF3DTextureAtlasData.hpp" />
+    <ClInclude Include="Szczur\Modules\DragonBones\SF3DTextureData.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\AmuletSlot.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\ArmorSlots.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\Equipment.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\EquipmentObject.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\EquipmentSlot.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\ItemManager.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\ItemPreview.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\NormalSlots.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\ReplaceItem.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\RingSlider.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\UsableItem.hpp" />
+    <ClInclude Include="Szczur\Modules\Equipment\WearableItem.hpp" />
+    <ClInclude Include="Szczur\Modules\FileSystem\DirectoryDialog.hpp" />
+    <ClInclude Include="Szczur\Modules\FileSystem\DragDrop.hpp" />
+    <ClInclude Include="Szczur\Modules\FileSystem\FileDialog.hpp" />
+    <ClInclude Include="Szczur\Modules\GUITest\NinePatch.hpp" />
+    <ClInclude Include="Szczur\Modules\GUITest\Patch.hpp" />
+    <ClInclude Include="Szczur\Modules\GUITest\Scroller.hpp" />
+    <ClInclude Include="Szczur\Modules\GUITest\StressTester.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\Animation\Anim.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\Animation\AnimBase.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\Animation\AnimData.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\Animation\BetweenGetter.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\Base\BaseBar.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\GUI.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\GuiAssetsManager.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\ImageWidget.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\InterfaceWidget.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\ListWidget.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\ProportionalDimes.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\ScrollAreaWidget.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\TextAreaWidget.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\TextWidget.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\Utility\TextData.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\Widget-Scripts.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\Widget.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\Widget\FamilyTransform.hpp" />
+    <ClInclude Include="Szczur\Modules\GUI\WindowWidget.hpp" />
+    <ClInclude Include="Szczur\Modules\Input\Input.hpp" />
+    <ClInclude Include="Szczur\Modules\Input\InputCode.hpp" />
+    <ClInclude Include="Szczur\Modules\Input\InputManager.hpp" />
+    <ClInclude Include="Szczur\Modules\Input\Keyboard.hpp" />
+    <ClInclude Include="Szczur\Modules\Input\Mouse.hpp" />
+    <ClInclude Include="Szczur\Modules\Input\Scroll.hpp" />
+    <ClInclude Include="Szczur\Modules\Listener\Listener.hpp" />
+    <ClInclude Include="Szczur\Modules\Music\Music.hpp" />
+    <ClInclude Include="Szczur\Modules\Music\MusicAssets.hpp" />
+    <ClInclude Include="Szczur\Modules\Music\MusicBase.hpp" />
+    <ClInclude Include="Szczur\Modules\Music\Playlist.hpp" />
+    <ClInclude Include="Szczur\Modules\Music\RatMusic.hpp" />
+    <ClInclude Include="Szczur\Modules\Player\Player.hpp" />
+    <ClInclude Include="Szczur\Modules\Script\Script.hpp" />
+    <ClInclude Include="Szczur\Modules\Script\ScriptClass.hpp" />
+    <ClInclude Include="Szczur\Modules\Sound\RatSound.hpp" />
+    <ClInclude Include="Szczur\Modules\Sound\Sound.hpp" />
+    <ClInclude Include="Szczur\Modules\Sound\SoundAssets.hpp" />
+    <ClInclude Include="Szczur\Modules\Sound\SoundBase.hpp" />
+    <ClInclude Include="Szczur\Modules\Window\Window.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Component.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\AnimatedSpriteComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\ArmatureComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\AudioComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\BaseComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\CameraComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\ColliderComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\InteractableComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\PointLightComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\ScriptableComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\SpriteComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\TraceComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\Trace\Action.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\Trace\Actions\AnimAction.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\Trace\Actions\MoveAction.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\Trace\Actions\ScriptAction.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\Trace\Actions\WaitAction.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\Trace\Timeline.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\Trace\Trace.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Components\TriggerComponent.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Data\ArmatureDisplayData.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Data\SpriteDisplayData.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Data\TextureDataHolder.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Entity.hpp" />
+    <ClInclude Include="Szczur\Modules\World\LevelEditor\ArmatureDisplayDataManager.hpp" />
+    <ClInclude Include="Szczur\Modules\World\LevelEditor\LevelEditor.hpp" />
+    <ClInclude Include="Szczur\Modules\World\LevelEditor\ObjectsList.hpp" />
+    <ClInclude Include="Szczur\Modules\World\LevelEditor\SpriteDisplayDataManager.hpp" />
+    <ClInclude Include="Szczur\Modules\World\Scene.hpp" />
+    <ClInclude Include="Szczur\Modules\World\ScenesManager.hpp" />
+    <ClInclude Include="Szczur\Modules\World\UniqueID.hpp" />
+    <ClInclude Include="Szczur\Modules\World\World.hpp" />
+    <ClInclude Include="Szczur\Utility\Algorithm\BinarySearch.hpp" />
+    <ClInclude Include="Szczur\Utility\Algorithm\LowerBound.hpp" />
+    <ClInclude Include="Szczur\Utility\Container\AssetManager.hpp" />
+    <ClInclude Include="Szczur\Utility\Container\AssetTraits.hpp" />
+    <ClInclude Include="Szczur\Utility\Convert\GLMStreams.hpp" />
+    <ClInclude Include="Szczur\Utility\Convert\Hash.hpp" />
+    <ClInclude Include="Szczur\Utility\Convert\Unicode.hpp" />
+    <ClInclude Include="Szczur\Utility\Convert\Windows1250.hpp" />
+    <ClInclude Include="Szczur\Utility\ImGuiTweaks.hpp" />
+    <ClInclude Include="Szczur\Utility\Logger.hpp" />
+    <ClInclude Include="Szczur\Utility\Modules\Module.hpp" />
+    <ClInclude Include="Szczur\Utility\Modules\ModulesHolder.hpp" />
+    <ClInclude Include="Szczur\Utility\MsgBox.hpp" />
+    <ClInclude Include="Szczur\Utility\Random.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Camera.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\CircleShape.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Drawable.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\LightPoint.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Linear.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\PrimitiveType.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Projections.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\RectangleShape.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\RenderLayer.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\RenderStates.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\RenderTarget.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\RenderTexture.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\RenderWindow.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Shader.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\ShaderProgram.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Shape.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\SimpleSprite.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Sprite.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Tests\Fixtures\RenderTargetTest.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Tests\Fixtures\RenderWindowTest.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Tests\Other\Test001.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Tests\RenderLayer.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Tests\RenderTarget.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Texture.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Transform.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Transformable.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\Vertex.hpp" />
+    <ClInclude Include="Szczur\Utility\SFML3D\VertexArray.hpp" />
+    <ClInclude Include="Szczur\Utility\Tests.hpp" />
+    <ClInclude Include="Szczur\Utility\Time\Clock.hpp" />
+    <ClInclude Include="Szczur\Utility\Time\Time.hpp" />
+    <ClInclude Include="Szczur\Utility\Time\Timer.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Szczur\Utility\Debug\NotoMono.ttf.bin" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="vendor\dragonBones\dragonBones.vcxproj">
+      <Project>{e2f4a8c3-3010-4bae-9bbd-3456f8a8ecd6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\glad\glad.vcxproj">
+      <Project>{90b12db8-d382-48ce-824a-cf8e433839d5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\imgui-node-editor\imgui-node-editor.vcxproj">
+      <Project>{47082d54-de0a-4969-819f-87d12af6ea6f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\imgui\imgui.vcxproj">
+      <Project>{14753b1b-3f25-458b-a409-033abed3a423}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\lua\lua.vcxproj">
+      <Project>{0518a65f-f1cf-e7ac-5ad7-c00846ae829d}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

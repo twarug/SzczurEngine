@@ -24,6 +24,7 @@
 #include "Szczur/Modules/Player/Player.hpp"
 #include "Szczur/Modules/Battle/Battle.hpp"
 
+
 #include "ImGuiStyler.hpp"
 
 namespace rat

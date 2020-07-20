@@ -15,3 +15,8 @@ settings.mk
 .clang_complete
 .vscode/
 *.npp
+
+/.vs
+/src/.vs
+/lib/x64
+/bin/x64

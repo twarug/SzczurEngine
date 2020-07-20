@@ -13,10 +13,12 @@ Cinematics::Cinematics()
     LOG_INFO("Module Cinematics initialized");
 
 }
+
 Cinematics::~Cinematics()
 {
     LOG_INFO("Module Cinematics destructed");
 }
+
 bool Cinematics::loadFromFile(const char * filename)
 {
     stop();

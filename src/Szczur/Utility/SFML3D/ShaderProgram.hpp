@@ -28,6 +28,12 @@ class ShaderProgram
 public:
 
 	using NativeHandle_t = GLuint;
+	///
+	template <typename... Ts>
+	ShaderProgram(Ts&&... shaders)
+	{
+		linkShaders(std::forward<Ts>(shaders)...);
+	}
 
 	///
 	ShaderProgram() = default;
@@ -176,20 +182,20 @@ ShaderProgram::ShaderProgram(Ts&&... shaders)
 	linkShaders(std::forward<Ts>(shaders)...);
 }
 
-template <typename... Ts>
-void ShaderProgram::linkShaders(Ts&&... shaders)
-{
-	static_assert((std::is_same_v<Shader, std::remove_cv_t<std::remove_reference_t<Ts>>> && ...), "All Ts must be exactly sf3d::Shader");
+	template <typename... Ts>
+	void ShaderProgram::linkShaders(Ts&&... shaders)
+	{
+		static_assert((std::is_same_v<Shader, std::remove_cv_t<std::remove_reference_t<Ts>>> && ...), "All Ts must be exactly sf3d::Shader");
 
-	_destroy();
+		_destroy();
 
-	_program = glCreateProgram();
+		_program = glCreateProgram();
 
-	(glAttachShader(_program, shaders.getNativeHandle()), ...);
+		(glAttachShader(_program, shaders.getNativeHandle()), ...);
 
-	glLinkProgram(_program);
+		glLinkProgram(_program);
 
-	(glDetachShader(_program, shaders.getNativeHandle()), ...);
+		(glDetachShader(_program, shaders.getNativeHandle()), ...);
 
 	_finishLinking();
 }

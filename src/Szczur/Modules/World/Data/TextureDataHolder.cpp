@@ -1,7 +1,7 @@
 #include "TextureDataHolder.hpp"
 
 #include <thread>
-#include <experimental/filesystem>
+#include <filesystem>
 
 
 #include "SpriteDisplayData.hpp"
@@ -15,13 +15,13 @@ namespace rat {
 TextureDataHolder::TextureData::TextureData(SpriteDisplayData* data)
 	: data(data), reloaded(false) {
 #ifndef PSYCHOX
-	lastWriten = std::experimental::filesystem::last_write_time(data->getName());	
+	lastWriten = std::filesystem::last_write_time(data->getName());	
 #endif
 }
 
 bool TextureDataHolder::TextureData::checkTime() {
 #ifndef PSYCHOX
-	return lastWriten == std::experimental::filesystem::last_write_time(data->getName());	
+	return lastWriten == std::filesystem::last_write_time(data->getName());	
 #else
 	return false;
 #endif
@@ -29,7 +29,7 @@ bool TextureDataHolder::TextureData::checkTime() {
 
 void TextureDataHolder::TextureData::updateTime() {
 #ifndef PSYCHOX
-	lastWriten = std::experimental::filesystem::last_write_time(data->getName());
+	lastWriten = std::filesystem::last_write_time(data->getName());
 #endif
 }
 

@@ -1,7 +1,7 @@
 #include "ScenesManager.hpp"
 
 #include <algorithm>
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include <SFML/Window/Event.hpp>
 #include <nlohmann/json.hpp>
@@ -510,8 +510,8 @@ bool ScenesManager::menuSave()
 	return false;
 }
 
-std::string ScenesManager::getRelativePathFromExplorer(const std::string& title, const std::string& directory, const std::string& filter, bool saveButton) {
-	namespace filesystem = std::experimental::filesystem;
+	std::string ScenesManager::getRelativePathFromExplorer(const std::string& title, const std::string& directory, const std::string& filter, bool saveButton) {
+		namespace filesystem = std::filesystem;
 
 	std::string file;
 	if (saveButton) {
